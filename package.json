@@ -5,17 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/WeDevelop-ARG/users-directory-backend.git"
-  },
-  "author": "Abel M. Osorio <abel.m.osorio@gmail.com>",
+  },  
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/WeDevelop-ARG/users-directory-backend/issues"
-  },
-  "homepage": "https://github.com/WeDevelop-ARG/users-directory-backend#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.16.4",
