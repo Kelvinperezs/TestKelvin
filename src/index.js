@@ -1,6 +1,6 @@
-const express = require('express');
-const faker = require('faker');
-const cors = require('cors');
+const express = require("express");
+const faker = require("faker");
+const cors = require("cors");
 
 const PORT = 3000;
 const app = express();
@@ -24,12 +24,12 @@ const getPeople = () => {
   return _people;
 };
 
-const findPeopleByName = (name) => {
+const findPeopleByName = name => {
   const people = getPeople();
 
   const sanitizedName = name && name.trim().toLowerCase();
 
-  return people.filter((person) => {
+  return people.filter(person => {
     if (person.firstName.toLowerCase().includes(sanitizedName)) return true;
     if (person.lastName.toLowerCase().includes(sanitizedName)) return true;
 
@@ -37,12 +37,12 @@ const findPeopleByName = (name) => {
   });
 };
 
-app.get('/people', (req, res) => res.send(getPeople()));
+app.get("/people", (req, res) => res.send(getPeople()));
 
-app.get('/people/by-name/:name', (req, res) => {
+app.get("/people/by-name/:name", (req, res) => {
   const { name } = req.params;
 
-  if (!name) return res.status(400).send('Bad request');
+  if (!name) return res.status(400).send("Bad request");
 
   res.send(findPeopleByName(name));
 });
